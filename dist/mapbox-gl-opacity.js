@@ -1,2 +1,152 @@
 
-"use strict";function _instanceof(e,t){return null!=t&&"undefined"!=typeof Symbol&&t[Symbol.hasInstance]?!!t[Symbol.hasInstance](e):e instanceof t}function _classCallCheck(e,t){if(!_instanceof(e,t))throw new TypeError("Cannot call a class as a function")}function _defineProperties(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}function _createClass(e,t,n){return t&&_defineProperties(e.prototype,t),n&&_defineProperties(e,n),e}Object.defineProperty(exports,"__esModule",{value:!0}),exports["default"]=void 0;var defaultOptions={baseLayers:null,overLayers:null,opacityControl:!1},OpacityControl=function(){function e(t){_classCallCheck(this,e),this._baseLayersOption=t.baseLayers||defaultOptions.baseLayers,this._overLayersOption=t.overLayers||defaultOptions.overLayers,this._opacityControlOption=t.opacityControl||defaultOptions.opacityControl}return _createClass(e,[{key:"_radioButtonControlAdd",value:function(e){var t=this,n=document.createElement("input");n.setAttribute("type","radio"),n.id=e,e===Object.keys(this._baseLayersOption)[0]?(n.checked=!0,this._map.setLayoutProperty(e,"visibility","visible")):this._map.setLayoutProperty(e,"visibility","none"),this._container.appendChild(n),n.addEventListener("change",function(n){n.target.checked=!0,t._map.setLayoutProperty(e,"visibility","visible"),Object.keys(t._baseLayersOption).forEach(function(e){e!==n.target.id&&(document.getElementById(e).checked=!1,t._map.setLayoutProperty(e,"visibility","none"))})});var i=document.createElement("span");i.appendChild(document.createTextNode(this._baseLayersOption[e])),this._container.appendChild(i)}},{key:"_checkBoxControlAdd",value:function(e){var t=this,n=document.createElement("input");n.setAttribute("type","checkbox"),n.id=e,this._map.setLayoutProperty(e,"visibility","none"),this._container.appendChild(n),n.addEventListener("change",function(n){var i=n.target.checked;i?t._map.setLayoutProperty(e,"visibility","visible"):t._map.setLayoutProperty(e,"visibility","none")});var i=document.createElement("span");i.appendChild(document.createTextNode(this._overLayersOption[e])),this._container.appendChild(i)}},{key:"_rangeControlAdd",value:function(e){var t=this,n=document.createElement("input");n.type="range",n.min=0,n.max=100,n.value=100,this._container.appendChild(n),n.addEventListener("input",function(n){var i=n.target.value;t._map.setPaintProperty(e,"raster-opacity",Number(i/100))})}},{key:"_opacityControlAdd",value:function(){var e=this;if(this._container=document.createElement("div"),this._container.className="mapboxgl-ctrl mapboxgl-ctrl-group",this._container.id="opacity-control",null!==this._baseLayersOption&&Object.keys(this._baseLayersOption).forEach(function(t){var n=t,i=document.createElement("br");e._radioButtonControlAdd(n),e._container.appendChild(i)}),null!==this._baseLayersOption&&null!==this._overLayersOption){var t=document.createElement("hr");this._container.appendChild(t)}null!==this._overLayersOption&&Object.keys(this._overLayersOption).forEach(function(t){var n=t,i=document.createElement("br");e._checkBoxControlAdd(n),e._container.appendChild(i),e._opacityControlOption&&(e._rangeControlAdd(n),e._container.appendChild(i))})}},{key:"onAdd",value:function(e){return this._map=e,this._opacityControlAdd(),this._container}},{key:"onRemove",value:function(){this._container.parentNode.removeChild(this._container),this._map=void 0}}]),e}(),_default=OpacityControl;exports["default"]=_default;
+// デフォルトオプション設定
+const defaultOptions = {
+    baseLayers: null,
+    overLayers: null,
+    opacityControl: false
+};
+
+class OpacityControl {
+    constructor(options) {
+        // オプション設定
+        this._baseLayersOption = options.baseLayers || defaultOptions.baseLayers;
+        this._overLayersOption = options.overLayers || defaultOptions.overLayers;
+        this._opacityControlOption = options.opacityControl || defaultOptions.opacityControl;
+    }
+
+    // ラジオボタン作成
+    _radioButtonControlAdd(layerId) {
+        // ラジオボタン追加
+        const radioButton = document.createElement('input');
+        radioButton.setAttribute('type', 'radio');
+        radioButton.id = layerId;
+        // 初期レイヤのみ表示
+        if (layerId === Object.keys(this._baseLayersOption)[0]) {
+            radioButton.checked = true;
+            this._map.setLayoutProperty(layerId, 'visibility', 'visible');
+        } else {
+            this._map.setLayoutProperty(layerId, 'visibility', 'none');
+        }
+        this._container.appendChild(radioButton);
+
+        // ラジオボタンイベント
+        radioButton.addEventListener('change', (event) => {
+            // 選択レイヤ表示
+            event.target.checked = true;
+            this._map.setLayoutProperty(layerId, 'visibility', 'visible');
+            // 選択レイヤ以外非表示
+            Object.keys(this._baseLayersOption).forEach((layer) => {
+                if (layer !== event.target.id) {
+                    document.getElementById(layer).checked = false;
+                    this._map.setLayoutProperty(layer, 'visibility', 'none');
+                }
+            });
+        });
+
+        // レイヤ名追加
+        const layerName = document.createElement('span');
+        layerName.appendChild(document.createTextNode(this._baseLayersOption[layerId]));
+        this._container.appendChild(layerName);
+    }
+
+    // チェックボックス作成
+    _checkBoxControlAdd(layerId) {
+        // チェックボックス追加
+        const checkBox = document.createElement('input');
+        checkBox.setAttribute('type', 'checkbox');
+        checkBox.id = layerId;
+        // 全レイヤ非表示
+        this._map.setLayoutProperty(layerId, 'visibility', 'none');
+        this._container.appendChild(checkBox);
+
+        // チェックボックスイベント
+        checkBox.addEventListener('change', (event) => {
+            const ckFlag = event.target.checked;
+            // レイヤの表示・非表示
+            if (ckFlag) {
+                this._map.setLayoutProperty(layerId, 'visibility', 'visible');
+            } else {
+                this._map.setLayoutProperty(layerId, 'visibility', 'none');
+            }
+        });
+        
+        // レイヤ名追加
+        const layerName = document.createElement('span');
+        layerName.appendChild(document.createTextNode(this._overLayersOption[layerId]));
+        this._container.appendChild(layerName);
+    }
+
+    // スライドバー作成
+    _rangeControlAdd(layerId) {
+        // スライドバー追加
+        const range = document.createElement('input');
+        range.type = 'range';
+        range.min = 0;
+        range.max = 100;
+        range.value = 100;
+        this._container.appendChild(range);
+
+        // スライドバースイベント
+        range.addEventListener('input', (event) => {
+            const rgValue = event.target.value;
+            // 透過度設定
+            this._map.setPaintProperty(layerId, 'raster-opacity', Number(rgValue / 100));
+        });
+
+    }
+
+    // コントロール作成
+    _opacityControlAdd() {
+        // コントロール設定
+        this._container = document.createElement('div');
+        this._container.className = 'mapboxgl-ctrl mapboxgl-ctrl-group';
+        this._container.id = 'opacity-control';
+
+        // 背景レイヤ設定
+        if (this._baseLayersOption !== null) {
+            Object.keys(this._baseLayersOption).forEach((layer) => {
+                const layerId = layer;
+                const br = document.createElement('br');
+                // ラジオボタン作成
+                this._radioButtonControlAdd(layerId);
+                this._container.appendChild(br);
+            });
+        }
+
+        // 区切り線
+        if (this._baseLayersOption !== null && this._overLayersOption !== null) {
+            const hr = document.createElement('hr');
+            this._container.appendChild(hr);
+        }
+
+        // オーバーレイヤ設定
+        if (this._overLayersOption !== null) {
+            Object.keys(this._overLayersOption).forEach((layer) => {
+                const layerId = layer;
+                const br = document.createElement('br');
+                // チェックボックス作成
+                this._checkBoxControlAdd(layerId);
+                this._container.appendChild(br);
+                // スライドバー作成
+                if (this._opacityControlOption) {
+                    this._rangeControlAdd(layerId);
+                    this._container.appendChild(br);
+                }
+            });
+        }
+    }
+
+    onAdd(map) {
+        this._map = map;
+        // コントロール作成
+        this._opacityControlAdd();
+        return this._container;
+    }
+
+    onRemove() {
+        this._container.parentNode.removeChild(this._container);
+        this._map = undefined;
+    }
+}
+
+export default OpacityControl;
