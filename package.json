@@ -1,0 +1,23 @@
+{
+  "name": "mapbox-gl-opacity",
+  "version": "1.0.0",
+  "description": "mapbox-gl-opacity is a Mapbox GL JS plugin that makes multiple tile layers transparent.",
+  "main": "dist/mapbox-gl-opacity.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dayjournal/mapbox-gl-opacity.git"
+  },
+  "keywords": [
+    "Mapbox GL JS",
+    "LayerControl",
+    "Opacity",
+    "tile",
+    "plugin"
+  ],
+  "author": "Yasunori Kirimoto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dayjournal/mapbox-gl-opacity/issues"
+  },
+  "homepage": "https://github.com/dayjournal/mapbox-gl-opacity#readme"
+}
