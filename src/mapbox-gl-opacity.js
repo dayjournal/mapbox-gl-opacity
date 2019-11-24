@@ -148,3 +148,5 @@ class OpacityControl {
         this._map = undefined;
     }
 }
+
+export default OpacityControl;

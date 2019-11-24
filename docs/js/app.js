@@ -1,3 +1,5 @@
+// module import
+import OpacityControl from "../plugin/mapbox-gl-opacity/dist/mapbox-gl-opacity.js";
 
 // MIERUNE MONO
 let map = new mapboxgl.Map({

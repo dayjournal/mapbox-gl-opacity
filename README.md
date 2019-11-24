@@ -72,7 +72,6 @@ index.html
     <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js"></script>
     <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css" rel="stylesheet">
 
-    <script src="plugin/mapbox-gl-opacity/dist/mapbox-gl-opacity.js"></script>
     <link href="plugin/mapbox-gl-opacity/dist/mapbox-gl-opacity.css" rel="stylesheet">
 
     <link href="css/style.css" rel="stylesheet">
@@ -81,7 +80,7 @@ index.html
 <body>
 
     <div id="map"></div>
-    <script src="js/app.js"></script>
+    <script type="module" src="js/app.js"></script>
 
 </body>
 </html>
@@ -103,6 +102,9 @@ html, body {
 
 app.js
 ```javascript
+// module import
+import OpacityControl from "../plugin/mapbox-gl-opacity/dist/mapbox-gl-opacity.js";
+
 // MIERUNE MONO
 let map = new mapboxgl.Map({
     container: "map",
@@ -235,12 +237,14 @@ import "mapbox-gl-opacity/dist/mapbox-gl-opacity.css";
 import "./css/style.css";
 
 // JS import
-import 'mapbox-gl-opacity';
 import './js/script.js';
 ```
 
 script.js
 ```javascript
+// module import
+import OpacityControl from "mapbox-gl-opacity";
+
 // MIERUNE MONO
 let map = new mapboxgl.Map({
     container: "map",
@@ -444,7 +448,6 @@ index.html
     <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js"></script>
     <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css" rel="stylesheet">
 
-    <script src="plugin/mapbox-gl-opacity/dist/mapbox-gl-opacity.js"></script>
     <link href="plugin/mapbox-gl-opacity/dist/mapbox-gl-opacity.css" rel="stylesheet">
 
     <link href="css/style.css" rel="stylesheet">
@@ -453,7 +456,7 @@ index.html
 <body>
 
     <div id="map"></div>
-    <script src="js/app.js"></script>
+    <script type="module" src="js/app.js"></script>
 
 </body>
 </html>
@@ -475,6 +478,9 @@ html, body {
 
 app.js
 ```javascript
+// module import
+import OpacityControl from "../plugin/mapbox-gl-opacity/dist/mapbox-gl-opacity.js";
+
 // MIERUNE MONO
 let map = new mapboxgl.Map({
     container: "map",
@@ -607,12 +613,14 @@ import "mapbox-gl-opacity/dist/mapbox-gl-opacity.css";
 import "./css/style.css";
 
 // JS import
-import 'mapbox-gl-opacity';
 import './js/script.js';
 ```
 
 script.js
 ```javascript
+// module import
+import OpacityControl from "mapbox-gl-opacity";
+
 // MIERUNE MONO
 let map = new mapboxgl.Map({
     container: "map",
