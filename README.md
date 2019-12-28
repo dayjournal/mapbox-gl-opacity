@@ -237,10 +237,10 @@ import "mapbox-gl-opacity/dist/mapbox-gl-opacity.css";
 import "./css/style.css";
 
 // JS import
-import './js/script.js';
+import './js/app.js';
 ```
 
-script.js
+app.js
 ```javascript
 // module import
 import OpacityControl from "mapbox-gl-opacity";
@@ -613,10 +613,10 @@ import "mapbox-gl-opacity/dist/mapbox-gl-opacity.css";
 import "./css/style.css";
 
 // JS import
-import './js/script.js';
+import './js/app.js';
 ```
 
-script.js
+app.js
 ```javascript
 // module import
 import OpacityControl from "mapbox-gl-opacity";
