@@ -39,7 +39,7 @@ position: 'top-left' or 'top-right' or 'bottom-left' or 'bottom-right'
 // Baselayers settings
 baseLayers: {
     m_mono: "MIERUNE Mono",
-    m_color: "MIERUNE Color",
+    m_color: "MIERUNE Color"
 }
 
 // Overlayers settings
@@ -69,8 +69,8 @@ index.html
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mapbox-gl-opacity example</title>
 
-    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js"></script>
-    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js"></script>
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css" rel="stylesheet">
 
     <link href="plugin/mapbox-gl-opacity/dist/mapbox-gl-opacity.css" rel="stylesheet">
 
@@ -193,7 +193,7 @@ map.on("load", function() {
     // BaseLayer
     const mapBaseLayer = {
         m_mono: "MIERUNE Mono",
-        m_color: "MIERUNE Color",
+        m_color: "MIERUNE Color"
     };
 
     // OverLayer
@@ -333,7 +333,7 @@ map.on("load", function() {
     // BaseLayer
     const mapBaseLayer = {
         m_mono: "MIERUNE Mono",
-        m_color: "MIERUNE Color",
+        m_color: "MIERUNE Color"
     };
 
     // OverLayer
@@ -362,7 +362,7 @@ map.on("load", function() {
 ## License
 MIT
 
-Copyright (c) 2019 Yasunori Kirimoto
+Copyright (c) 2020 Yasunori Kirimoto
 
 <br>
 
@@ -415,7 +415,7 @@ position: 'top-left' or 'top-right' or 'bottom-left' or 'bottom-right'
 // 背景レイヤ設定
 baseLayers: {
     m_mono: "MIERUNE Mono",
-    m_color: "MIERUNE Color",
+    m_color: "MIERUNE Color"
 }
 
 // オーバーレイヤ設定
@@ -445,8 +445,8 @@ index.html
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mapbox-gl-opacity example</title>
 
-    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js"></script>
-    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js"></script>
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css" rel="stylesheet">
 
     <link href="plugin/mapbox-gl-opacity/dist/mapbox-gl-opacity.css" rel="stylesheet">
 
@@ -569,7 +569,7 @@ map.on("load", function() {
     // BaseLayer
     const mapBaseLayer = {
         m_mono: "MIERUNE Mono",
-        m_color: "MIERUNE Color",
+        m_color: "MIERUNE Color"
     };
 
     // OverLayer
@@ -709,7 +709,7 @@ map.on("load", function() {
     // BaseLayer
     const mapBaseLayer = {
         m_mono: "MIERUNE Mono",
-        m_color: "MIERUNE Color",
+        m_color: "MIERUNE Color"
     };
 
     // OverLayer
@@ -738,6 +738,6 @@ map.on("load", function() {
 ## ライセンス
 MIT
 
-Copyright (c) 2019 Yasunori Kirimoto
+Copyright (c) 2020 Yasunori Kirimoto
 
 <br>

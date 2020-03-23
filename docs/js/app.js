@@ -89,7 +89,7 @@ map.on("load", function() {
     // BaseLayer
     const mapBaseLayer = {
         m_mono: "MIERUNE Mono",
-        m_color: "MIERUNE Color",
+        m_color: "MIERUNE Color"
     };
 
     // OverLayer
