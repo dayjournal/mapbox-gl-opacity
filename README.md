@@ -69,8 +69,8 @@ index.html
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mapbox-gl-opacity example</title>
 
-    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js"></script>
-    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js"></script>
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.css" rel="stylesheet">
 
     <link href="plugin/mapbox-gl-opacity/dist/mapbox-gl-opacity.css" rel="stylesheet">
 
@@ -362,7 +362,7 @@ map.on("load", function() {
 ## License
 MIT
 
-Copyright (c) 2020 Yasunori Kirimoto
+Copyright (c) 2019-2021 Yasunori Kirimoto
 
 <br>
 
@@ -445,8 +445,8 @@ index.html
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mapbox-gl-opacity example</title>
 
-    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js"></script>
-    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js"></script>
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.css" rel="stylesheet">
 
     <link href="plugin/mapbox-gl-opacity/dist/mapbox-gl-opacity.css" rel="stylesheet">
 
@@ -738,6 +738,6 @@ map.on("load", function() {
 ## ライセンス
 MIT
 
-Copyright (c) 2020 Yasunori Kirimoto
+Copyright (c) 2019-2021 Yasunori Kirimoto
 
 <br>
